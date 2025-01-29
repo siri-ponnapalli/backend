@@ -3,15 +3,16 @@ pipeline {
         label 'AGENT-1'
     }
     options{
-        timeout(time: 10, unit: 'MINUTES')
+        timeout(time: 30, unit: 'MINUTES')
         disableConcurrentBuilds()
         //retry(1)
     }
     environment {
         DEBUG = 'true'
-        appVersion = '' // this will become global, we can use across pipeline
+        appVersion = '' //this will became global,we can use across pipeline
     }
-
+    
+    }
     stages {
         stage('Read the version') {
             steps {
@@ -26,13 +27,13 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'echo This is test new'
+                sh 'echo This is test'
                 sh 'env'
             }
         }
         stage('Deploy') {
             when {
-               expression { env.GIT_BRANCH != "origin/main" } 
+                expression { env.GIT_BRANCH != "origin/main" }
             }
             steps {
 
@@ -72,6 +73,9 @@ pipeline {
         }
         success{
             echo "This section run when pipeline success"
+        }
+        failure{
+            echo "This section run when pipeline failure"
         }
     }
 }
