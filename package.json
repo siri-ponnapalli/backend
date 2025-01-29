@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"Building the application...\" && exit 0"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,6 @@
     "express": "^4.17.1",
     "mysql2": "latest",
     "node-fetch": "^2.6.1",
-    "moment" : "latest"
+    "moment": "latest"
   }
 }
