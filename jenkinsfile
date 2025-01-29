@@ -18,7 +18,7 @@ pipeline {
                 script{
                     def packageJSON = readJSON file: 'package.json'
                     appVersion = packageJson.version
-                    echo "App version: ${appversion}"
+                    echo "App version: ${appVersion}"
                 }
                 
                 
@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                expression { env.GIT_BRANCH != "origin/main" }
+               expression { env.GIT_BRANCH != "origin/main" } 
             }
             steps {
 
