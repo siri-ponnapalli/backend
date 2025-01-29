@@ -2,7 +2,7 @@
                 sh 'echo This is test'
                 sh 'env'
             }
-        }
+        
         stage('Deploy') {
             when {
                 expression { env.GIT_BRANCH != "origin/main" }
@@ -36,7 +36,7 @@
               //   echo "Hello, ${PERSON}, nice to meet you."
              //}
          //}
-    }
+    
 
     post {
         always{
